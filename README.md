@@ -55,3 +55,41 @@ Execute the program to input a number and see the computed factorial displayed:
 ./Factorial
 ```
 
+## Task 4: Sensor Control Simulation (x86 Assembly)
+### Task Overview:
+This task simulates a sensor-based control system for a motor and an alarm. The program takes an input sensor value and triggers different actions based on the level of the sensor value. The program displays the status of the motor and the alarm based on the following conditions:
+
+High Sensor Value (Above 80): Turns on both the motor and the alarm.
+Moderate Sensor Value (Between 50 and 80): Turns off both the motor and the alarm.
+Low Sensor Value (Below 50): Turns on the motor and turns off the alarm.
+The program uses system calls for input and output and includes an ASCII to integer conversion subroutine to handle the input from the user.
+
+Key Features:
+Prompts the user for a sensor value.
+Controls the motor and alarm based on the sensor value using conditional checks.
+Displays the motor and alarm statuses ("ON" or "OFF").
+Ends the program after displaying the statuses.
+File Name:
+SensorControl.asm
+
+Commands to Assemble, Link, and Run:
+### Assemble the assembly file
+
+```
+
+nasm -f elf32 -o SensorControl.o SensorControl.asm
+```
+### Link the object file
+
+```
+
+ld -m elf_i386 -o SensorControl SensorControl.o
+```
+
+### Run the executable
+
+```
+./SensorControl
+
+```
+
